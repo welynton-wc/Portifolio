@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <Style>
+      /* Reset e configurações básicas */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Cabeçalho */
+.header {
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 3rem 0;
+}
+
+.header-content {
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  background: #dcfce7;
+  color: #166534;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.main-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #111827;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.highlight {
+  color: #059669;
+}
+
+.subtitle {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.author {
+  font-size: 1.125rem;
+  color: #9ca3af;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+.author-name {
+  font-weight: 600;
+  color: #059669;
+}
+
+/* Seção de Introdução */
+.intro-section {
+  padding: 4rem 0;
+}
+
+.intro-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-header {
+  text-align: center;
+  padding: 2rem 2rem 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.card-content {
+  padding: 0 2rem 2rem;
+}
+
+.intro-text {
+  font-size: 1.125rem;
+  color: #374151;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.highlight-box {
+  background: #f0fdf4;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #10b981;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.check-icon {
+  color: #10b981;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.highlight-text {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #065f46;
+}
+
+/* Seção das Dicas */
+.tips-section {
+  padding: 4rem 0;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.section-title-center {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #111827;
+  margin-bottom: 3rem;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tip-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+
+.tip-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tip-header {
+  padding: 1.5rem 1.5rem 0;
+}
+
+.tip-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.tip-icon.blue {
+  background: #dbeafe;
+}
+.tip-icon.cyan {
+  background: #cffafe;
+}
+.tip-icon.orange {
+  background: #fed7aa;
+}
+.tip-icon.green {
+  background: #dcfce7;
+}
+.tip-icon.purple {
+  background: #e9d5ff;
+}
+
+.tip-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.3;
+}
+
+.tip-content {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.tip-text {
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.tip-highlight {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tip-highlight.blue {
+  background: #eff6ff;
+}
+.tip-highlight.cyan {
+  background: #ecfeff;
+}
+.tip-highlight.orange {
+  background: #fff7ed;
+}
+.tip-highlight.green {
+  background: #f0fdf4;
+}
+.tip-highlight.purple {
+  background: #faf5ff;
+}
+
+.tip-highlight-text {
+  font-weight: 600;
+}
+
+.tip-highlight.blue .tip-highlight-text {
+  color: #1e40af;
+}
+.tip-highlight.cyan .tip-highlight-text {
+  color: #0891b2;
+}
+.tip-highlight.orange .tip-highlight-text {
+  color: #ea580c;
+}
+.tip-highlight.green .tip-highlight-text {
+  color: #059669;
+}
+.tip-highlight.purple .tip-highlight-text {
+  color: #9333ea;
+}
+
+.tip-small {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Seção de Erros */
+.errors-section {
+  padding: 4rem 0;
+}
+
+.errors-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.errors-header {
+  text-align: center;
+  padding: 2rem 2rem 0;
+}
+
+.warning-icon {
+  width: 4rem;
+  height: 4rem;
+  background: #fee2e2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 1rem;
+}
+
+.errors-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #7f1d1d;
+}
+
+.errors-content {
+  padding: 0 2rem 2rem;
+}
+
+.error-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.error-bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #dc2626;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+.error-text {
+  color: #7f1d1d;
+  font-weight: 500;
+}
+
+.final-message {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 0.5rem;
+  border: 1px solid #fecaca;
+}
+
+.final-text {
+  color: #7f1d1d;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Seção de Conclusão */
+.conclusion-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #059669 0%, #2563eb 100%);
+  color: white;
+}
+
+.conclusion-content {
+  text-align: center;
+}
+
+.conclusion-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.conclusion-text {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.conclusion-main {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.conclusion-sub {
+  font-size: 1.125rem;
+}
+
+/* Seção CTA */
+.cta-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.cta-content {
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2rem;
+}
+
+.cta-subtitle {
+  font-size: 1.25rem;
+  color: #374151;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  width: 100%;
+  max-width: 200px;
+}
+
+.btn-whatsapp {
+  background: #059669;
+  color: white;
+}
+
+.btn-whatsapp:hover {
+  background: #047857;
+  transform: translateY(-1px);
+}
+
+.btn-instagram {
+  background: transparent;
+  color: #ec4899;
+  border: 2px solid #ec4899;
+}
+
+.btn-instagram:hover {
+  background: #fdf2f8;
+  transform: translateY(-1px);
+}
+
+.btn-icon {
+  font-size: 1.25rem;
+}
+
+/* Rodapé */
+.footer {
+  background: #111827;
+  color: white;
+  padding: 2rem 0;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-main {
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+}
+
+.footer-sub {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Responsividade */
+@media (min-width: 640px) {
+  .cta-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn {
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .tips-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .card-content,
+  .tip-content,
+  .errors-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+  }
+
+  .section-title,
+  .section-title-center {
+    font-size: 1.5rem;
+  }
+
+  .tip-title {
+    font-size: 1.125rem;
+  }
+}
+
+    </Style>
+</head>
+<body>
+  
+</body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comece a Emagrecer Hoje - Guia Prático</title>
+    <meta name="description" content="Guia prático para iniciantes no emagrecimento saudável">
+    <meta name="keywords" content="emagrecimento, dieta, saúde, perda de peso, vida saudável">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="badge">Guia Gratuito</div>
+                <h1 class="main-title">
+                    Comece a Emagrecer <span class="highlight">Hoje</span>
+                </h1>
+                <p class="subtitle">
+                    Guia Prático para Iniciantes no Emagrecimento Saudável
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção de Introdução -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-card">
+                <div class="card-header">
+                    <h2 class="section-title">Introdução</h2>
+                </div>
+                <div class="card-content">
+                    <p class="intro-text">
+                      Você não precisa de dietas malucas, nem de horas na academia para começar a emagrecer com saúde.
+                    </p>
+                    <p class="intro-text">
+                        Este guia vai te mostrar como dar os primeiros passos de forma simples e segura, mesmo com uma rotina corrida.
+                    </p>
+                    <div class="highlight-box">
+                        <div class="check-icon">✓</div>
+                        <p class="highlight-text">
+                            Comece com o que você tem. O importante é começar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção das 5 Dicas Principais -->
+    <section class="tips-section">
+        <div class="container">
+            <h2 class="section-title-center">5 Passos Simples para Começar</h2>
+            
+            <div class="tips-grid">
+                <!-- Primeira Dica -->
+                <div class="tip-card">
+                    <div class="tip-header">
+                        <div class="tip-icon blue">❤️</div>
+                        <h3 class="tip-title">1. FOCO NA ROTINA, NÃO NA RESTRIÇÃO</h3>
+                    </div>
+                    <div class="tip-content">
+                        <p class="tip-text">Troque o "não posso comer isso" por:</p>
+                        <div class="tip-highlight blue">
+                            <p class="tip-highlight-text">"Como posso comer melhor hoje?"</p>
+                        </div>
+                        <p class="tip-small">Pequenas escolhas diárias somam grandes resultados.</p>
+                    </div>
+                </div>
+
+                <!-- Segunda Dica -->
+                <div class="tip-card">
+                    <div class="tip-header">
+                        <div class="tip-icon cyan">💧</div>
+                        <h3 class="tip-title">2. BEBA MAIS ÁGUA, CORPO FUNCIONA MELHOR</h3>
+                    </div>
+                    <div class="tip-content">
+                        <p class="tip-text">Seu corpo precisa de hidratação para eliminar gordura e toxinas.</p>
+                        <div class="tip-highlight cyan">
+                            <div class="check-icon">✓</div>
+                            <p class="tip-highlight-text">Comece com 2L por dia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terceira Dica -->
+                <div class="tip-card">
+                    <div class="tip-header">
+                        <div class="tip-icon orange">⚡</div>
+                        <h3 class="tip-title">3. MOVIMENTE-SE, MESMO EM CASA</h3>
+                    </div>
+                    <div class="tip-content">
+                        <div class="tip-highlight orange">
+                            <div class="check-icon">✓</div>
+                            <p class="tip-highlight-text">30 minutos de caminhada, dançar ou subir escadas já ajudam.</p>
+                        </div>
+                        <p class="tip-small">Tudo isso auxilia no emagrecimento mesmo sem academia.</p>
+                    </div>
+                </div>
+
+                <!-- Quarta Dica -->
+                <div class="tip-card">
+                    <div class="tip-header">
+                        <div class="tip-icon green">🍽️</div>
+                        <h3 class="tip-title">4. ORGANIZE SUAS REFEIÇÕES SIMPLESMENTE</h3>
+                    </div>
+                    <div class="tip-content">
+                        <p class="tip-text">Planeje 3 refeições principais e 2 lanches saudáveis.</p>
+                        <div class="tip-highlight green">
+                            <div class="check-icon">✓</div>
+                            <p class="tip-highlight-text">Ex: frutas, ovos, legumes, frango, castanhas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quinta Dica -->
+                <div class="tip-card">
+                    <div class="tip-header">
+                        <div class="tip-icon purple">🌙</div>
+                        <h3 class="tip-title">5. DORMIR É PARTE DO EMAGRECIMENTO</h3>
+                    </div>
+                    <div class="tip-content">
+                        <div class="tip-highlight purple">
+                            <div class="check-icon">✓</div>
+                            <p class="tip-highlight-text">Dormir mal desequilibra seus hormônios e te faz sentir mais fome.</p>
+                        </div>
+                        <p class="tip-small">Durma de 7 a 8 horas por noite sempre que possível.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Erros Comuns -->
+    <section class="errors-section">
+        <div class="container">
+            <div class="errors-card">
+                <div class="errors-header">
+                    <div class="warning-icon">⚠️</div>
+                    <h2 class="errors-title">Erros comuns que você deve evitar:</h2>
+                </div>
+                <div class="errors-content">
+                    <div class="error-item">
+                        <div class="error-bullet"></div>
+                        <p class="error-text">Jejum extremo sem orientação</p>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-bullet"></div>
+                        <p class="error-text">Cortar tudo e depois desistir</p>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-bullet"></div>
+                        <p class="error-text">Comparar seu corpo com o dos outros</p>
+                    </div>
+                    <div class="final-message">
+                        <p class="final-text">
+                            Cada corpo tem seu tempo. Respeite o seu processo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Conclusão -->
+    <section class="conclusion-section">
+        <div class="container">
+            <div class="conclusion-content">
+                <h2 class="conclusion-title">Conclusão</h2>
+                <div class="conclusion-text">
+                    <p class="conclusion-main">
+                        Você não precisa esperar segunda-feira. Comece <span class="bold">HOJE</span>, com o que você tem, do jeito que dá.
+                    </p>
+                    <p class="conclusion-sub">O segredo está em ser constante e respeitar seu ritmo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Chamada para Ação -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Fale Comigo!</h2>
+                <p class="cta-subtitle">Quer ajuda personalizada ou dicas diárias?</p>
+                
+                <div class="cta-buttons">
+                    <a href="https://wa.me/seulink" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                        <span class="btn-icon">✉︎</span>
+                        WhatsApp
+                    </a>
+                    <a href="https://instagram.com/seuusuario" target="_blank" rel="noopener noreferrer" class="btn btn-instagram">
+                        <span class="btn-icon">𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦🅾</span>
+                        
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-main">© 2025 Developer WCA - Todos os direitos reservados</p>
+                <p class="footer-sub">Comece a Emagrecer Hoje</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+</html>
+ 
